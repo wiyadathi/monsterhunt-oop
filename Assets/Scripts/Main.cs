@@ -9,7 +9,8 @@ public class Main : MonoBehaviour
         Hero hero = new Hero("HeroA", 75);
         
         //print attributes to see if the object actually created.
-        Debug.Log("Hero name: " + hero.name);
+        Debug.Log("Hero name: " + hero.name + ", Health: " 
+            + hero.health + ", Gold: " + hero.gold);
     }
 
 

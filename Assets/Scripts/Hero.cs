@@ -3,8 +3,8 @@ class Hero
 {
     //Attributes
     public string name;
-    int health;
-    int gold;
+    public int health;
+    public int gold;
 
     //Constructor to crete abject = ผู้รับเหมาที่จะสร้าง Object จาก Blueprint
     public Hero(string newName, int newHp)
