@@ -1,15 +1,20 @@
 using UnityEngine;
+//using System.Diagnostics;
 
-public class Monster : MonoBehaviour
+class Monster
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public string Name;
+    public int Hp;
+    private bool defeated;
+    
+    public Monster(string newName, int newHp)
     {
-        
+        Name = newName;
+        Hp = newHp;
+        defeated = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage()
     {
         
     }
