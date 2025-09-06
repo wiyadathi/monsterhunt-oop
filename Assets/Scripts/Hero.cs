@@ -8,8 +8,8 @@ class Hero
     public string Name
     {  
        get { return name; }
-       set { if (value == "") name = "Hero";
-             else name = value;
+       set { if (!string.IsNullOrEmpty(value)) name = value;
+            else name = "Unknown Hero"; 
        }
     }
 
