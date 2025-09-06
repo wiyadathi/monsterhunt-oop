@@ -1,5 +1,5 @@
 
-using UnityEngine.UIElements.Experimental;
+using UnityEngine;
 
 class Hero
 {
@@ -32,16 +32,48 @@ class Hero
         {
             if (value > 9999) gold = 9999; //max gold cap
             else if(value < 0) gold = 0; //no negative gold
-            else gold = value; ;
+            else gold = value; 
         }
     }
 
-    //Constructor to crete abject = ผู้รับเหมาที่จะสร้าง Object จาก Blueprint
+    // public int AttackPower
+    public int AttackPower { get; set; }
+
+    //Constructor to create abject = ผู้รับเหมาที่จะสร้าง Object จาก Blueprint
     public Hero(string newName, int newHp)
     {
         Name = newName; 
         Health = newHp;
         Gold = 0;
     }
+
+    //Behaviors-Methods
+    public void TakeDamage(int newDamage) 
+    { 
+        Health -= newDamage;
+    }
+
+    public bool IsAlive() 
+    {
+        return health > 0;
+    }
+
+    public void ShowStat()
+    {
+        Debug.Log("Hero name: " + name + ", Health: " + health + ", Gold: " + gold + 
+            ", AttackPower: " + AttackPower);
+    }
+
+    public void EarnGold(int amount) 
+    {
+        if (amount > 0)
+        {
+            Gold += amount;
+            Debug.Log("Received " + amount + " golds" );
+            ShowStat();
+        }
+        else { Debug.Log("Invalid gold amount"); }
+    }
+
 
 }

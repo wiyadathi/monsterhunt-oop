@@ -29,6 +29,24 @@ public class Main : MonoBehaviour
         
         Debug.Log("Hero name: " + hero.Name + ", Health: " + hero.Health + ", Gold: " + hero.Gold);
 
+        //test class and methods
+        hero.Health = 50;
+        hero.ShowStat();
+        int damage = 10;
+        hero.TakeDamage(damage);
+        hero.ShowStat();
+        if (hero.IsAlive())
+        {
+            Debug.Log("Continue Battle...");
+        }
+
+        //Main: assume the hero earn 10 golds
+        int goldReward = 10;
+        hero.Gold = 0;
+        hero.EarnGold(goldReward);
+
+        hero.AttackPower = -5;
+        hero.ShowStat();
     }
 
 
