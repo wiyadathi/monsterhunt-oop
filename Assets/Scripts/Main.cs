@@ -22,8 +22,12 @@ public class Main : MonoBehaviour
 */
         //Main class: edit hero's health (public) fields
         hero.Health = -50;
+        hero.Gold = 100000;
         Debug.Log("Hero name: " + hero.Name + ", Health: " + hero.Health + ", Gold: " + hero.Gold);
 
+        hero.Name = "";
+        
+        Debug.Log("Hero name: " + hero.Name + ", Health: " + hero.Health + ", Gold: " + hero.Gold);
 
     }
 
