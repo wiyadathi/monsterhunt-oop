@@ -45,6 +45,7 @@ public class Main : MonoBehaviour
         hero.Gold = 0;
         hero.EarnGold(goldReward);
 
+        //Main: test AttackPower auto-property
         hero.AttackPower = -5;
         hero.ShowStat();
     }
