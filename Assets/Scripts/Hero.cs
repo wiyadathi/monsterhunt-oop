@@ -4,14 +4,16 @@ using UnityEngine;
 class Hero
 {
     //Attributes
-    private string name;
-    public string Name
+    public string Name { get; set; }
+
+    //private string name;
+    /*    public string Name
     {  
        get { return name; }
        set { if (!string.IsNullOrEmpty(value)) name = value;
             else name = "Unknown Hero"; 
        }
-    }
+    }*/
 
     //Property
     private int health; 
@@ -60,8 +62,8 @@ class Hero
 
     public void ShowStat()
     {
-        Debug.Log("Hero name: " + name + ", Health: " + health + ", Gold: " + gold + 
-            ", AttackPower: " + AttackPower);
+        Debug.Log("Hero name: " + Name + ", Health: " + Health + 
+            ", Gold: " + Gold + ", AttackPower: " + AttackPower);
     }
 
     public void EarnGold(int amount) 
