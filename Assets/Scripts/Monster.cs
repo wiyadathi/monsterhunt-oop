@@ -1,7 +1,7 @@
 using UnityEngine;
 //using System.Diagnostics;
 
-class Monster
+public class Monster
 {
     public string Name { get; set; }
 
@@ -43,5 +43,22 @@ class Monster
     {
         return health > 0;
     }
+
+    public void ShowStat()
+    {
+        Debug.Log("Monster: " + Name + ", Health: " + Health +
+            ", Reward: " + LootGold + " golds, AttackPower: " + AttackPower);
+    }
+
+    public int DropReward() {
+        return LootGold;
+    }
+
+    public void Attack(Hero target)
+    {
+        Debug.Log($"{Name} attacks {target.Name} for {AttackPower} damage! ");
+        target.TakeDamage(AttackPower);
+    }
+
 }
 

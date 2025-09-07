@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-class Hero
+public class Hero
 {
     public string Name { get; private set; }
 
@@ -61,5 +61,10 @@ class Hero
         else { Debug.Log("Invalid gold amount"); }
     }
 
+    public void Attack(Monster target)
+    {
+        Debug.Log($"{Name} attacks {target.Name} for {AttackPower} damage! ");
+        target.TakeDamage(AttackPower);
+    }
 
 }
