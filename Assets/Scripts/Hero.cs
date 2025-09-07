@@ -1,8 +1,21 @@
 
 using UnityEngine;
 
-class Hero : Character
+class Hero
 {
+    public string Name { get; private set; }
+
+    //Property: health Cannot be less than 0
+    private int health;
+    public int Health
+    {
+        get => health;
+        set => health = (value < 0) ? 0 : value;
+    }
+
+    // public int AttackPower
+    public int AttackPower { get; set; }
+
     private int gold;
     public int Gold
     {
@@ -11,12 +24,15 @@ class Hero : Character
     }
 
     //Constructor 
-    public Hero(string newName, int newHp, int atkPower): base(newName, newHp, atkPower)
+    public Hero(string newName, int newHp, int atkPower)
     {
+        Name = newName;
+        Health = newHp;
+        AttackPower = atkPower;
         Gold = 0;
     }
 
-    /*
+    
     //Behaviors-Methods
     public void TakeDamage(int newDamage) 
     { 
@@ -28,7 +44,7 @@ class Hero : Character
     {
         return health > 0;
     }
-*/
+
     public void ShowStat()
     {
         Debug.Log("Hero name: " + Name + ", Health: " + Health + 

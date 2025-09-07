@@ -6,17 +6,17 @@ public class Main : MonoBehaviour
     void Start()
     {
         //create hero object
-        Hero hero = new Hero("HeroA", 75);
+        Hero hero = new Hero("HeroA", 75, 15);
 
-        Monster orc = new Monster("Orc", 25);
-        Monster goblin = new Monster("Goblin", 30);
-        Monster dragon = new Monster("Dragon", 35);
+        Monster orc = new Monster("Orc", 25, 5, 3);
+        Monster goblin = new Monster("Goblin", 30, 10, 6);
+        Monster dragon = new Monster("Dragon", 35, 15, 10);
 
         //print attributes to see if the object actually created.
         Debug.Log("Hero name: " + hero.Name + ", Health: " 
             + hero.Health + ", Gold: " + hero.Gold);
 
-        Debug.Log("Monster Name: " + orc.Name + ", HP: " + orc.Hp);
+        Debug.Log("Monster Name: " + orc.Name + ", HP: " + orc.Health);
 /*        Debug.Log("Monster Name: " + goblin.Name + ", HP: " + goblin.Hp);
         Debug.Log("Monster Name: " + dragon.Name + ", HP: " + dragon.Hp);
 */
@@ -25,7 +25,7 @@ public class Main : MonoBehaviour
         hero.Gold = 100000;
         Debug.Log("Hero name: " + hero.Name + ", Health: " + hero.Health + ", Gold: " + hero.Gold);
 
-        hero.Name = "";
+        //hero.Name = "";
         
         Debug.Log("Hero name: " + hero.Name + ", Health: " + hero.Health + ", Gold: " + hero.Gold);
 
