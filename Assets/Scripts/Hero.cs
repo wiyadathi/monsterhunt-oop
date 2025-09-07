@@ -15,27 +15,39 @@ class Hero
        }
     }*/
 
-    //Property
+    //Property: health Cannot be less than 0
     private int health; 
-    public int Health   //Propertiy
+    public int Health  
     {          
-        get { return health; } 
-        set { 
-            if (value >= 0) health = value;
-            else health = 0;
-        }
+        get => health; 
+        set => health = (value < 0) ? 0 : value;
     }
 
+/*    public int Health   //Propertiy
+    {
+        get { return health; }
+        set
+        {
+            if (value < 0) health = 0;
+            else health = value;
+        } // Monster can't have negative HP
+    }*/
+
     private int gold;
-    public int Gold  //Propertiy
+/*    public int Gold  //Propertiy
     {
         get { return gold; }
         set
         {
-            if (value > 9999) gold = 9999; //max gold cap
+            if (value > 999) gold = 999; //max gold cap
             else if(value < 0) gold = 0; //no negative gold
             else gold = value; 
         }
+    }*/
+    public int Gold
+    {
+        get => gold;
+        set => gold = (value < 0) ? 0 : (value > 999 ? 999 : value);
     }
 
     // public int AttackPower
@@ -53,6 +65,7 @@ class Hero
     public void TakeDamage(int newDamage) 
     { 
         Health -= newDamage;
+        Debug.Log($"{Name} takes {newDamage} damage. HP left: {Health}");
     }
 
     public bool IsAlive() 
@@ -71,8 +84,7 @@ class Hero
         if (amount > 0)
         {
             Gold += amount;
-            Debug.Log("Received " + amount + " golds" );
-            ShowStat();
+            Debug.Log($"{Name} earned {amount} golds. Total golds: {Gold}" );
         }
         else { Debug.Log("Invalid gold amount"); }
     }
